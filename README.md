@@ -11,7 +11,7 @@ Notes:
  - Markers will be renamed when their waystone is renamed.
  - Markers will be removed when their waystone is broken.
 
-Credit to [Antique Waystones](https://modrinth.com/mod/antique-waystones) and [Way2Way](https://modrinth.com/mod/way2wayfabric) for insights into wrangling the API (And for the marker we edited!)
+Credit to [Antique Waystones](https://modrinth.com/mod/antique-waystones) and [Way2Way](https://modrinth.com/mod/way2wayfabric) for marker design and insights into wrangling the API.
 
 ---
 
