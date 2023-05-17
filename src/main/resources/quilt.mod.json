@@ -1,0 +1,52 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "folk.sisby",
+		"id": "antique-fwaystones",
+		"version": "${version}",
+		"metadata": {
+			"name": "Antique Fwaystones",
+			"description": "Adds antique atlas markers for discovered waystones",
+			"contributors": {
+				"Sisby Folk": "Co-Authors"
+			},
+			"contact": {
+				"homepage": "https://modrinth.com/mod/antique-fwaystones",
+				"issues": "https://github.com/sisby-folk/antique-fwaystones/issues",
+				"sources": "https://github.com/sisby-folk/antique-fwaystones"
+			},
+			"icon": "assets/antique_fwaystones/icon.png"
+		},
+		"entrypoints": {
+			"init": [
+				"folk.sisby.antique_fwaystones.AntiqueFwaystones"
+			],
+			"client_init": [
+				"folk.sisby.antique_fwaystones.AntiqueFwaystonesClient"
+			]
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"depends": [
+			{
+				"id": "minecraft",
+				"versions": ">=${mc}"
+			},
+			{
+				"id": "quilt_loader",
+				"versions": ">=${ql}"
+			},
+			{
+				"id": "quilted_fabric_api",
+				"versions": ">=${qfapi}"
+			},
+			{
+				"id": "fwaystones",
+				"versions": ">=${fwaystones}"
+			},
+			{
+				"id": "antiqueatlas",
+				"versions": ">=${antiqueatlas}"
+			}
+		]
+	}
+}

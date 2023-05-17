@@ -1,0 +1,48 @@
+pluginManagement {
+	repositories {
+		maven {
+			name = 'Quilt'
+			url = 'https://maven.quiltmc.org/repository/release'
+		}
+		// Currently needed for Intermediary and other temporary dependencies
+		maven {
+			name = 'Fabric'
+			url = 'https://maven.fabricmc.net/'
+		}
+		gradlePluginPortal()
+	}
+}
+
+dependencyResolutionManagement {
+	versionCatalogs {
+		libs {
+			def mc_major = '1.19'
+			def mc = mc_major + '.2'
+
+			// // Build Tools // //
+			version('loom', '1.1.+')
+
+			plugin('loom', 'org.quiltmc.loom').versionRef('loom')
+
+			// // Base // //
+			version('mc', mc)
+			version('ql', "0.17.10")
+			version('qm', "${mc}+build.21")
+			version('qsl', "3.0.0-beta.29+${mc}")
+			version('qfapi', "4.0.0-beta.28+0.73.2-${mc}")
+
+			library('mc', 'mojang', 'minecraft').versionRef('mc')
+			library('ql', 'org.quiltmc', 'quilt-loader').versionRef('ql')
+			library('qm', 'org.quiltmc', 'quilt-mappings').versionRef('qm')
+			library('qsl', 'org.quiltmc', 'qsl').versionRef('qsl')
+			library('qfapi', 'org.quiltmc.quilted-fabric-api', 'quilted-fabric-api',).versionRef('qfapi')
+
+			// Compat //
+			version('antiqueatlas', '8.0.0-fabric-mc1.19.2')
+			version('fwaystones', '3.0.7+mc1.19.2')
+
+			library('antiqueatlas', 'hunternif.mc.atlas', 'antiqueatlas-fabric').versionRef('antiqueatlas')
+			library('fwaystones', 'wraith.waystones', 'FabricWaystones').versionRef('fwaystones')
+		}
+	}
+}
