@@ -1,3 +1,5 @@
+//file:noinspection GroovyAssignabilityCheck
+//file:noinspection GroovyAccessibility
 buildscript {
 	repositories {
 		gradlePluginPortal()
@@ -45,7 +47,6 @@ dependencies {
 	minecraft libs.mc
 	mappings variantOf(libs.qm) { classifier "intermediary-v2" }
 	modImplementation libs.ql
-	modImplementation libs.qsl
 	modImplementation libs.qfapi
 
 	// Compat //
@@ -61,14 +62,14 @@ processResources {
 		"version"        : version.toString(),
 		"mc"             : libs.versions.mc.get(),
 		"ql"             : libs.versions.ql.get(),
-		"qsl"            : libs.versions.qsl.get(),
+		"fapi"          : libs.versions.qfapi.get(),
 		"qfapi"          : libs.versions.qfapi.get(),
 		"antiqueatlas"          : libs.versions.antiqueatlas.get(),
 		"fwaystones"          : libs.versions.fwaystones.get(),
 	]
 
 	inputs.properties(map)
-	filesMatching('quilt.mod.json') { expand(map) }
+	filesMatching('*.mod.json') { expand(map) }
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -107,10 +108,9 @@ if (System.getenv("MODRINTH_TOKEN")) {
 		versionType = 'release'
 		uploadFile = remapJar
 		gameVersions = [mc]
-		loaders = ['quilt']
+		loaders = ['quilt', 'fabric']
 		detectLoaders = false
 		dependencies {
-			required.project "qsl"
 			required.project "fwaystones"
 			required.project "antique-atlas"
 		}

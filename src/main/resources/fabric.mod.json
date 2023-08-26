@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "antique-fwaystones",
+  "version": "${version}",
+  "name": "Antique Fwaystones",
+  "description": "Adds antique atlas markers for discovered waystones",
+  "authors": [
+    "Sisby folk"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/antique-fwaystones",
+    "issues": "https://github.com/sisby-folk/antique-fwaystones/issues",
+    "sources": "https://github.com/sisby-folk/antique-fwaystones"
+  },
+  "icon": "assets/antique_fwaystones/icon.png",
+  "license": "LGPL-3.0-only",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "folk.sisby.antique_fwaystones.AntiqueFwaystones"
+    ],
+    "client": [
+      "folk.sisby.antique_fwaystones.AntiqueFwaystonesClient"
+    ]
+  },
+  "depends": {
+    "minecraft": ">=${mc}",
+    "fabricloader": ">=0.14.9",
+    "fabric": ">=${fapi}",
+    "fwaystones": ">=${fwaystones}",
+    "antiqueatlas": ">=${antiqueatlas}"
+  }
+}

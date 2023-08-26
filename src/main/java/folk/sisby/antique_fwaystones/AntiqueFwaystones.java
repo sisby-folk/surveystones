@@ -2,12 +2,11 @@ package folk.sisby.antique_fwaystones;
 
 import hunternif.mc.api.AtlasAPI;
 import hunternif.mc.impl.atlas.marker.Marker;
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
-import org.quiltmc.loader.api.ModContainer;
-import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
-import org.quiltmc.qsl.lifecycle.api.event.ServerWorldLoadEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import wraith.fwaystones.FabricWaystones;
@@ -17,6 +16,7 @@ import wraith.fwaystones.integration.event.WaystoneEvents;
 
 import java.util.HashMap;
 
+@SuppressWarnings("deprecation")
 public class AntiqueFwaystones implements ModInitializer {
 	public static final String ID = "antique_fwaystones";
 	public static final Logger LOGGER = LoggerFactory.getLogger(ID);
@@ -27,11 +27,11 @@ public class AntiqueFwaystones implements ModInitializer {
 	public static AntiqueFwaystoneMapState MAP_STATE;
 
 	@Override
-	public void onInitialize(ModContainer mod) {
+	public void onInitialize() {
 		WaystoneEvents.DISCOVER_WAYSTONE_EVENT.register(AntiqueFwaystones::discoverWaystone);
 		WaystoneEvents.REMOVE_WAYSTONE_EVENT.register(AntiqueFwaystones::removeWaystone);
 		WaystoneEvents.RENAME_WAYSTONE_EVENT.register(AntiqueFwaystones::renameWaystone);
-		ServerWorldLoadEvents.LOAD.register(((server, world) -> {
+		ServerWorldEvents.LOAD.register(((server, world) -> {
 			if (world.getRegistryKey() == World.OVERWORLD) {
 				MAP_STATE = world.getPersistentStateManager().getOrCreate(AntiqueFwaystoneMapState::readNbt, () -> {
 					AntiqueFwaystoneMapState state = new AntiqueFwaystoneMapState(new HashMap<>());

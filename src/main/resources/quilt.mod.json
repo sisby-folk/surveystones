@@ -8,7 +8,7 @@
 			"name": "Antique Fwaystones",
 			"description": "Adds antique atlas markers for discovered waystones",
 			"contributors": {
-				"Sisby Folk": "Co-Authors"
+				"Sisby folk": "Co-Authors"
 			},
 			"contact": {
 				"homepage": "https://modrinth.com/mod/antique-fwaystones",
@@ -18,10 +18,10 @@
 			"icon": "assets/antique_fwaystones/icon.png"
 		},
 		"entrypoints": {
-			"init": [
+			"main": [
 				"folk.sisby.antique_fwaystones.AntiqueFwaystones"
 			],
-			"client_init": [
+			"client": [
 				"folk.sisby.antique_fwaystones.AntiqueFwaystonesClient"
 			]
 		},
