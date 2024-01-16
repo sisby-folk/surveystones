@@ -18,15 +18,12 @@
   "entrypoints": {
     "main": [
       "folk.sisby.antique_fwaystones.AntiqueFwaystones"
-    ],
-    "client": [
-      "folk.sisby.antique_fwaystones.AntiqueFwaystonesClient"
     ]
   },
   "depends": {
     "minecraft": ">=${mc}",
-    "fabricloader": ">=0.14.9",
-    "fabric": ">=${fapi}",
+    "fabricloader": ">={fl}",
+    "fabric-api": ">=${fapi}",
     "fwaystones": ">=${fwaystones}",
     "antiqueatlas": ">=${antiqueatlas}"
   }

@@ -16,7 +16,6 @@ import wraith.fwaystones.integration.event.WaystoneEvents;
 
 import java.util.HashMap;
 
-@SuppressWarnings("deprecation")
 public class AntiqueFwaystones implements ModInitializer {
 	public static final String ID = "antique_fwaystones";
 	public static final Logger LOGGER = LoggerFactory.getLogger(ID);
