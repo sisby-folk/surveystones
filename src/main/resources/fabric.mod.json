@@ -22,7 +22,7 @@
   },
   "depends": {
     "minecraft": ">=${mc}",
-    "fabricloader": ">={fl}",
+    "fabricloader": ">=${fl}",
     "fabric-api": ">=${fapi}",
     "fwaystones": ">=${fwaystones}",
     "antiqueatlas": ">=${antiqueatlas}"
