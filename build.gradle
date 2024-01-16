@@ -91,6 +91,9 @@ if (System.getenv("MODRINTH_TOKEN")) {
 		loaders = ['quilt', 'fabric']
 		detectLoaders = false
 		dependencies {
+			required.version libs.fapi.get().getName(), libs.versions.fapi.get()
+			required.version libs.antiqueatlas.get().getName(), libs.versions.antiqueatlas.get()
+			required.version libs.fwaystones.get().getName(), libs.versions.fwaystones.get()
 		}
 		changelog = rootProject.file("CHANGELOG.md").text + "\n\nChangelog: https://github.com/sisby-folk/antique-fwaystones/releases/tag/v$baseVersion"
 		syncBodyFrom = rootProject.file("README.md").text
