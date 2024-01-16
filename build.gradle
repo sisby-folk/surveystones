@@ -92,7 +92,7 @@ if (System.getenv("MODRINTH_TOKEN")) {
 		detectLoaders = false
 		dependencies {
 		}
-		changelog = rootProject.file("CHANGELOG.md").text + "<br/>\nChangelog: https://github.com/sisby-folk/antique-fwaystones/releases/tag/v$baseVersion"
+		changelog = rootProject.file("CHANGELOG.md").text + "\n\nChangelog: https://github.com/sisby-folk/antique-fwaystones/releases/tag/v$baseVersion"
 		syncBodyFrom = rootProject.file("README.md").text
 	}
 }
