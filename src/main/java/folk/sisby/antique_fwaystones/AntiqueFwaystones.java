@@ -1,7 +1,7 @@
 package folk.sisby.antique_fwaystones;
 
-import hunternif.mc.api.AtlasAPI;
-import hunternif.mc.impl.atlas.marker.Marker;
+import folk.sisby.antique_atlas.api.AtlasAPI;
+import folk.sisby.antique_atlas.marker.Marker;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.minecraft.text.Text;

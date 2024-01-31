@@ -30,7 +30,7 @@ repositories {
 dependencies {
 	// // Base // //
 	minecraft libs.mc
-	mappings libs.yarn
+	mappings variantOf(libs.yarn) { classifier "v2" }
 	modImplementation libs.fl
 	modImplementation libs.fapi
 
@@ -39,6 +39,8 @@ dependencies {
 		exclude module: 'journeymap-32274'
 		exclude module: 'journeymap-api'
 	}
+	modRuntimeOnly libs.pinlib
+	modRuntimeOnly libs.kaleidoConfig
 }
 
 processResources {

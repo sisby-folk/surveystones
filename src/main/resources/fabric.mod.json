@@ -25,6 +25,6 @@
     "fabricloader": ">=${fl}",
     "fabric-api": ">=${fapi}",
     "fwaystones": ">=${fwaystones}",
-    "antiqueatlas": ">=${antiqueatlas}"
+    "antique-atlas": ">=${antiqueatlas}"
   }
 }
