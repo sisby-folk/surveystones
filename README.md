@@ -1,6 +1,6 @@
 <!--suppress HtmlDeprecatedTag, XmlDeprecatedElement -->
 <center>
-<img alt="screenshot" src="https://cdn.modrinth.com/data/f3WJvB4r/images/79557a013c6c9c8f800c8fa4aefd87b396d8fd8f.png" /><br/>
+<img alt="screenshot" src="https://cdn.modrinth.com/data/f3WJvB4r/images/78d6bb2e6557421f917d7301b05713023bbd11cc.png" /><br/>
 Automatic markers for discovered waystones.<br/>
 Requires <a href="https://modrinth.com/mod/antique-atlas-4">Antique Atlas 4</a> and <a href="https://modrinth.com/mod/fwaystones">Fabric Waystones</a><br/>
 </center>
