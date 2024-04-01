@@ -3,7 +3,7 @@
   "id": "antique-fwaystones",
   "version": "${version}",
   "name": "Antique Fwaystones",
-  "description": "Adds antique atlas markers for discovered waystones",
+  "description": "Adds surveyor landmarks for discovered waystones",
   "authors": [
     "Sisby folk"
   ],
@@ -25,6 +25,6 @@
     "fabricloader": ">=${fl}",
     "fabric-api": ">=${fapi}",
     "fwaystones": ">=${fwaystones}",
-    "antique-atlas": ">=${antiqueatlas}"
+    "surveyor": ">=${surveyor}"
   }
 }

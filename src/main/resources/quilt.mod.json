@@ -41,8 +41,8 @@
 				"versions": ">=${fwaystones}"
 			},
 			{
-				"id": "antique-atlas",
-				"versions": ">=${antiqueatlas}"
+				"id": "surveyor",
+				"versions": ">=${surveyor}"
 			}
 		]
 	}

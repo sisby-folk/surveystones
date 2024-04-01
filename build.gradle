@@ -25,6 +25,7 @@ repositories {
 	maven { url "https://maven.wispforest.io" }
 	maven { url "https://maven.shedaniel.me/" } // Cloth Config
 	maven { url 'https://jitpack.io' }
+	maven { url 'https://repo.sleeping.town/' }
 }
 
 dependencies {
@@ -34,7 +35,7 @@ dependencies {
 	modImplementation libs.fl
 	modImplementation libs.fapi
 
-	modImplementation libs.antiqueatlas
+	modImplementation libs.surveyor
 	modImplementation(libs.fwaystones) {
 		exclude module: 'journeymap-32274'
 		exclude module: 'journeymap-api'
@@ -45,12 +46,12 @@ dependencies {
 
 processResources {
 	final Map<String, String> map = [
-		"version"     : version.toString(),
-		"mc"          : libs.versions.mc.get(),
-		"fl"          : libs.versions.fl.get(),
-		"fapi"        : libs.versions.fapi.get(),
-		"antiqueatlas": libs.versions.antiqueatlas.get(),
-		"fwaystones"  : libs.versions.fwaystones.get(),
+		"version"   : version.toString(),
+		"mc"        : libs.versions.mc.get(),
+		"fl"        : libs.versions.fl.get(),
+		"fapi"      : libs.versions.fapi.get(),
+		"surveyor"  : libs.versions.surveyor.get(),
+		"fwaystones": libs.versions.fwaystones.get(),
 	]
 
 	inputs.properties(map)
@@ -94,7 +95,7 @@ if (System.getenv("MODRINTH_TOKEN")) {
 		detectLoaders = false
 		dependencies {
 			required.version libs.fapi.get().getName(), libs.versions.fapi.get()
-			required.version libs.antiqueatlas.get().getName(), libs.versions.antiqueatlas.get()
+			required.version libs.surveyor.get().getName(), libs.versions.surveyor.get()
 			required.version libs.fwaystones.get().getName(), libs.versions.fwaystones.get()
 		}
 		changelog = rootProject.file("CHANGELOG.md").text + "\n\nChangelog: https://github.com/sisby-folk/antique-fwaystones/releases/tag/v$baseVersion"

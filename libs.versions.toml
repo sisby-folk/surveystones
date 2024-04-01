@@ -9,7 +9,7 @@ yarn = "1.19.2+build.28"
 fapi = "0.76.0+1.19.2"
 kaleidoConfig = "0.2.0+1.2.0-beta.5"
 
-antiqueatlas = "1.1.4+1.19"
+surveyor = "0.1.0-beta.11+1.20"
 fwaystones = "3.0.3+MC1.19.2"
 pinlib = "0.1.3+mc1.19-beta"
 
@@ -25,6 +25,6 @@ fl = { group = "net.fabricmc", name = "fabric-loader", version.ref = "fl" }
 yarn = { group = "net.fabricmc", name = "yarn", version.ref = "yarn" }
 fapi = { group = "net.fabricmc.fabric-api", name = "fabric-api", version.ref = "fapi" }
 kaleidoConfig = { group = "folk.sisby", name = "kaleido-config", version.ref = "kaleidoConfig" }
-antiqueatlas = { group = "maven.modrinth", name = "antique-atlas-4", version.ref = "antiqueatlas" }
+surveyor = { group = "folk.sisby", name = "surveyor", version.ref = "surveyor" }
 fwaystones = { group = "maven.modrinth", name = "fwaystones", version.ref = "fwaystones" }
 pinlib = { group = "maven.modrinth", name = "pinlib", version.ref = "pinlib" }

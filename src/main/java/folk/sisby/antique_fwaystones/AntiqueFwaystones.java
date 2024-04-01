@@ -1,12 +1,10 @@
 package folk.sisby.antique_fwaystones;
 
-import folk.sisby.antique_atlas.api.AtlasAPI;
-import folk.sisby.antique_atlas.marker.Marker;
+import folk.sisby.surveyor.WorldSummary;
+import folk.sisby.surveyor.landmark.Landmarks;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import wraith.fwaystones.FabricWaystones;
@@ -14,59 +12,27 @@ import wraith.fwaystones.access.WaystoneValue;
 import wraith.fwaystones.block.WaystoneBlockEntity;
 import wraith.fwaystones.integration.event.WaystoneEvents;
 
-import java.util.HashMap;
-
 public class AntiqueFwaystones implements ModInitializer {
 	public static final String ID = "antique_fwaystones";
 	public static final Logger LOGGER = LoggerFactory.getLogger(ID);
-	private static final String DATA_KEY = "aFwaystonesMarkerMap";
-
-	public static final Identifier WAYSTONE_MARKER_ID = new Identifier(ID, "waystone");
-
-	public static AntiqueFwaystoneMapState MAP_STATE;
 
 	@Override
 	public void onInitialize() {
 		WaystoneEvents.DISCOVER_WAYSTONE_EVENT.register(AntiqueFwaystones::discoverWaystone);
 		WaystoneEvents.REMOVE_WAYSTONE_EVENT.register(AntiqueFwaystones::removeWaystone);
 		WaystoneEvents.RENAME_WAYSTONE_EVENT.register(AntiqueFwaystones::renameWaystone);
-		ServerWorldEvents.LOAD.register(((server, world) -> {
-			if (world.getRegistryKey() == World.OVERWORLD) {
-				MAP_STATE = world.getPersistentStateManager().getOrCreate(AntiqueFwaystoneMapState::readNbt, () -> {
-					AntiqueFwaystoneMapState state = new AntiqueFwaystoneMapState(new HashMap<>());
-					state.markDirty();
-					return state;
-				}, DATA_KEY);
-			}
-		}
-		));
+		Landmarks.register(WaystoneLandmark.TYPE);
 		LOGGER.info("[Antique Fwaystones] Initialized.");
 	}
 
 	public static void discoverWaystone(String hash) {
-		if (MAP_STATE != null && !MAP_STATE.waystoneMarkers.containsKey(hash)) {
-			WaystoneValue waystone = FabricWaystones.WAYSTONE_STORAGE.getWaystoneData(hash);
-			if (waystone != null) {
-				WaystoneBlockEntity waystoneEntity = waystone.getEntity();
-				if (waystoneEntity != null) {
-					World waystoneWorld = waystoneEntity.getWorld();
-					if (waystoneWorld != null) {
-						removeWaystone(hash);
-						Marker marker = AtlasAPI.getMarkerAPI().putGlobalMarker(
-							waystoneWorld,
-							false,
-							WAYSTONE_MARKER_ID,
-							Text.literal(waystone.getWaystoneName()),
-							waystone.way_getPos().getX(),
-							waystone.way_getPos().getZ()
-						);
-						if (marker != null) {
-							MAP_STATE.waystoneMarkers.put(hash, marker.getId());
-							MAP_STATE.markDirty();
-						}
-					}
-				}
-			}
+		WaystoneValue waystone = FabricWaystones.WAYSTONE_STORAGE.getWaystoneData(hash);
+		if (waystone != null) {
+			WaystoneBlockEntity waystoneEntity = waystone.getEntity();
+            if (waystoneEntity != null && waystoneEntity.getWorld() instanceof ServerWorld sw) {
+                removeWaystone(hash);
+                WorldSummary.of(sw).landmarks().put(sw, new WaystoneLandmark(waystone.way_getPos(), hash, waystone.getColor(), Text.of(waystone.getWaystoneName())));
+            }
 		}
 	}
 
@@ -76,17 +42,12 @@ public class AntiqueFwaystones implements ModInitializer {
 	}
 
 	public static void removeWaystone(String hash) {
-		if (MAP_STATE != null && MAP_STATE.waystoneMarkers.containsKey(hash)) {
-			WaystoneValue waystone = FabricWaystones.WAYSTONE_STORAGE.getWaystoneData(hash);
-			if (waystone != null) {
-				WaystoneBlockEntity waystoneEntity = waystone.getEntity();
-				if (waystoneEntity != null) {
-					World waystoneWorld = waystoneEntity.getWorld();
-					if (waystoneWorld != null) {
-						AtlasAPI.getMarkerAPI().deleteGlobalMarker(waystoneWorld, MAP_STATE.waystoneMarkers.get(hash));
-						MAP_STATE.waystoneMarkers.remove(hash);
-						MAP_STATE.markDirty();
-					}
+		WaystoneValue waystone = FabricWaystones.WAYSTONE_STORAGE.getWaystoneData(hash);
+		if (waystone != null) {
+			WaystoneBlockEntity waystoneEntity = waystone.getEntity();
+			if (waystoneEntity != null) {
+				if (waystoneEntity.getWorld() instanceof ServerWorld sw) {
+					WorldSummary.of(sw).landmarks().remove(sw, WaystoneLandmark.TYPE, waystone.way_getPos());
 				}
 			}
 		}
