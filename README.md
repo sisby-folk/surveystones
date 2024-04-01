@@ -1,15 +1,16 @@
-<center><img alt="screenshot" src="https://cdn.modrinth.com/data/f3WJvB4r/images/79557a013c6c9c8f800c8fa4aefd87b396d8fd8f.png" /></center>
-
-<center>Automatic atlas markers for discovered waystones.</center>
-<center>Requires <a href="https://modrinth.com/mod/antique-atlas">Antique Atlas</a> and <a href="https://modrinth.com/mod/fwaystones">Fabric Waystones</a> </center>
+<!--suppress HtmlDeprecatedTag, XmlDeprecatedElement -->
+<center>
+<img alt="screenshot" src="https://cdn.modrinth.com/data/f3WJvB4r/images/79557a013c6c9c8f800c8fa4aefd87b396d8fd8f.png" /><br/>
+Automatic markers for discovered waystones.<br/>
+Requires <a href="https://modrinth.com/mod/antique-atlas-4">Antique Atlas 4</a> and <a href="https://modrinth.com/mod/fwaystones">Fabric Waystones</a><br/>
+</center>
 
 ---
 
 Notes:
- - Markers are automatic and cannot be removed by players.
- - Added waystone markers are global - anyone with that part of their atlas revealed will see waystones.
- - Markers will be renamed when their waystone is renamed.
- - Markers will be removed when their waystone is broken.
+ - Supports any Surveyor map mod, not just atlas.
+ - Must be installed on both sides to function.
+ - Provides a texture to Antique Atlas using landmark type textures.
 
 Credit to [Antique Waystones](https://modrinth.com/mod/antique-waystones) and [Way2Way](https://modrinth.com/mod/way2wayfabric) for marker design and insights into wrangling the API.
 
