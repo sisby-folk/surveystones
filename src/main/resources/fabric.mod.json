@@ -29,8 +29,5 @@
   "suggests": {
     "fwaystones": ">=${fwaystones}",
     "waystones": ">=${blaystones}"
-  },
-  "mixins": [
-    "surveystones.mixins.json"
-  ]
+  }
 }

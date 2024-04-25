@@ -51,6 +51,5 @@
 				"versions": ">=${surveyor}"
 			}
 		]
-	},
-	"mixin": "surveystones.mixins.json"
+	}
 }
