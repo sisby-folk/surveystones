@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "folk.sisby.surveystones.mixin",
+  "plugin": "folk.sisby.surveystones.mixin.compat.MixinCompatPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "compat.waystones.MixinWaystoneManager"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

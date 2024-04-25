@@ -1,4 +1,4 @@
-package folk.sisby.antique_fwaystones;
+package folk.sisby.surveystones;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
@@ -15,13 +15,13 @@ public class CodecUtil {
 		try {
 			return DataResult.success(Text.Serializer.fromJson(element));
 		} catch (JsonParseException e) {
-			return DataResult.error(e.getMessage());
+			return DataResult.error(e::getMessage);
 		}
 	}, text -> {
 		try {
 			return DataResult.success(Text.Serializer.toJsonTree(text));
 		} catch (IllegalArgumentException e) {
-			return DataResult.error(e.getMessage());
+			return DataResult.error(e::getMessage);
 		}
 	});
 }

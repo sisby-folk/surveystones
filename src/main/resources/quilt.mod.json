@@ -2,24 +2,24 @@
 	"schema_version": 1,
 	"quilt_loader": {
 		"group": "folk.sisby",
-		"id": "antique-fwaystones",
+		"id": "surveystones",
 		"version": "${version}",
 		"metadata": {
-			"name": "Antique Fwaystones",
-			"description": "Adds antique atlas markers for discovered waystones",
+			"name": "Surveystones",
+			"description": "Adds surveyor landmarks for discovered waystones",
 			"contributors": {
 				"Sisby folk": "Co-Authors"
 			},
 			"contact": {
-				"homepage": "https://modrinth.com/mod/antique-fwaystones",
-				"issues": "https://github.com/sisby-folk/antique-fwaystones/issues",
-				"sources": "https://github.com/sisby-folk/antique-fwaystones"
+				"homepage": "https://modrinth.com/mod/surveystones",
+				"issues": "https://github.com/sisby-folk/surveystones/issues",
+				"sources": "https://github.com/sisby-folk/surveystones"
 			},
-			"icon": "assets/antique_fwaystones/icon.png"
+			"icon": "assets/surveystones/icon.png"
 		},
 		"entrypoints": {
 			"main": [
-				"folk.sisby.antique_fwaystones.AntiqueFwaystones"
+				"folk.sisby.surveystones.Surveystones"
 			]
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
@@ -38,12 +38,19 @@
 			},
 			{
 				"id": "fwaystones",
-				"versions": ">=${fwaystones}"
+				"versions": ">=${fwaystones}",
+				"optional": true
+			},
+			{
+				"id": "waystones",
+				"versions": ">=${blaystones}",
+				"optional": true
 			},
 			{
 				"id": "surveyor",
 				"versions": ">=${surveyor}"
 			}
 		]
-	}
+	},
+	"mixin": "surveystones.mixins.json"
 }

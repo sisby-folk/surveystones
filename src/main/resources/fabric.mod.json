@@ -1,30 +1,36 @@
 {
   "schemaVersion": 1,
-  "id": "antique-fwaystones",
+  "id": "surveystones",
   "version": "${version}",
-  "name": "Antique Fwaystones",
+  "name": "Surveystones",
   "description": "Adds surveyor landmarks for discovered waystones",
   "authors": [
     "Sisby folk"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/antique-fwaystones",
-    "issues": "https://github.com/sisby-folk/antique-fwaystones/issues",
-    "sources": "https://github.com/sisby-folk/antique-fwaystones"
+    "homepage": "https://modrinth.com/mod/surveystones",
+    "issues": "https://github.com/sisby-folk/surveystones/issues",
+    "sources": "https://github.com/sisby-folk/surveystones"
   },
-  "icon": "assets/antique_fwaystones/icon.png",
+  "icon": "assets/surveystones/icon.png",
   "license": "LGPL-3.0-only",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "folk.sisby.antique_fwaystones.AntiqueFwaystones"
+      "folk.sisby.surveystones.Surveystones"
     ]
   },
   "depends": {
     "minecraft": ">=${mc}",
     "fabricloader": ">=${fl}",
     "fabric-api": ">=${fapi}",
-    "fwaystones": ">=${fwaystones}",
     "surveyor": ">=${surveyor}"
-  }
+  },
+  "suggests": {
+    "fwaystones": ">=${fwaystones}",
+    "waystones": ">=${blaystones}"
+  },
+  "mixins": [
+    "surveystones.mixins.json"
+  ]
 }

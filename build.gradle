@@ -36,11 +36,12 @@ dependencies {
 	modImplementation libs.fapi
 
 	modImplementation libs.surveyor
-	modImplementation(libs.fwaystones) {
+	modCompileOnly(libs.fwaystones) {
 		exclude module: 'journeymap-32274'
 		exclude module: 'journeymap-api'
 	}
-	modRuntimeOnly libs.pinlib
+	modCompileOnly libs.blaystones
+	modCompileOnly libs.balm
 	modRuntimeOnly libs.kaleidoConfig
 }
 
@@ -52,6 +53,7 @@ processResources {
 		"fapi"      : libs.versions.fapi.get(),
 		"surveyor"  : libs.versions.surveyor.get(),
 		"fwaystones": libs.versions.fwaystones.get(),
+		"blaystones": libs.versions.blaystones.get(),
 	]
 
 	inputs.properties(map)
@@ -85,7 +87,7 @@ if (System.getenv("MODRINTH_TOKEN")) {
 	apply plugin: "com.modrinth.minotaur"
 	modrinth {
 		token = System.getenv("MODRINTH_TOKEN")
-		projectId = 'antique-fwaystones'
+		projectId = 'surveystones'
 		versionNumber = project.version
 		versionName = baseVersion
 		versionType = 'release'
@@ -98,7 +100,7 @@ if (System.getenv("MODRINTH_TOKEN")) {
 			required.version libs.surveyor.get().getName(), libs.versions.surveyor.get()
 			required.version libs.fwaystones.get().getName(), libs.versions.fwaystones.get()
 		}
-		changelog = rootProject.file("CHANGELOG.md").text + "\n\nChangelog: https://github.com/sisby-folk/antique-fwaystones/releases/tag/v$baseVersion"
+		changelog = rootProject.file("CHANGELOG.md").text + "\n\nChangelog: https://github.com/sisby-folk/surveystones/releases/tag/v$baseVersion"
 		syncBodyFrom = rootProject.file("README.md").text
 	}
 }
@@ -108,7 +110,7 @@ if (System.getenv("GITHUB_TOKEN")) {
 	githubRelease {
 		token System.getenv("GITHUB_TOKEN")
 		owner "sisby-folk"
-		repo "antique-fwaystones"
+		repo "surveystones"
 		tagName "v$baseVersion"
 		releaseName baseVersion
 		targetCommitish defaultBranch
