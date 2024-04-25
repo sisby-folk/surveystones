@@ -24,6 +24,6 @@ public record FwaystoneLandmark(BlockPos pos, String hash, int fullColor, Text n
 
 	@Override
 	public DyeColor color() {
-		return DyeColor.GREEN; // Replace this with a DyeColor guesser
+		return DyeColor.RED; // Replace this with a DyeColor guesser
 	}
 }
