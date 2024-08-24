@@ -9,8 +9,9 @@ Requires <a href="https://modrinth.com/mod/connector">Connector</a> and <a href=
 ---
 
 Notes:
- - Must be installed on both sides to function.
- - Includes custom landmark textures for Antique Atlas 4.
+
+- Must be installed on both sides to function.
+- Includes custom landmark textures for Antique Atlas 4.
 
 ---
 
