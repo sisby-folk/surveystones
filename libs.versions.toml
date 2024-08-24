@@ -26,6 +26,6 @@ yarn = { group = "net.fabricmc", name = "yarn", version.ref = "yarn" }
 fapi = { group = "net.fabricmc.fabric-api", name = "fabric-api", version.ref = "fapi" }
 
 surveyor = { group = "folk.sisby", name = "surveyor", version.ref = "surveyor" }
-blaystones = { group = "maven.modrinth", name = "balm", version.ref = "balm" }
-balm = { group = "maven.modrinth", name = "waystones", version.ref = "blaystones" }
+balm = { group = "maven.modrinth", name = "balm", version.ref = "balm" }
+blaystones = { group = "maven.modrinth", name = "waystones", version.ref = "blaystones" }
 fwaystones = { group = "maven.modrinth", name = "fwaystones", version.ref = "fwaystones" }
