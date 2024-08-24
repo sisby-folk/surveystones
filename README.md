@@ -2,8 +2,8 @@
 <center>
 <img alt="screenshot" src="https://cdn.modrinth.com/data/f3WJvB4r/images/11b518e9c39ee96aacc23478a1abb139445c74ad.png" /><br/>
 Adds Surveyor landmarks for waystones<br/>
-Works with <a href="https://modrinth.com/mod/fwaystones">Fwaystones</a>, <a href="https://modrinth.com/mod/waystones">Blaystones</a>, and Surveyor maps (<a href="https://modrinth.com/mod/antique-atlas-4">Antique Atlas 4</a>)<br/>
-Requires <a href="https://modrinth.com/mod/connector">Connector</a> and <a href="https://modrinth.com/mod/forgified-fabric-api">FFAPI</a> on forge<br/>
+Works with <a href="https://modrinth.com/mod/fwaystones">Fwaystones</a>, <a href="https://modrinth.com/mod/waystones">Blaystones</a>, and Surveyor maps (<a href="https://modrinth.com/mod/antique-atlas-4">Antique Atlas 4</a>, <a href="https://modrinth.com/mod/hoofprint">Hoofprint</a>)<br/>
+Requires <a href="https://modrinth.com/mod/connector">Connector</a> and <a href="https://modrinth.com/mod/forgified-fabric-api">FFAPI</a> on (neo)forge<br/>
 </center>
 
 ---
@@ -24,4 +24,4 @@ Also thanks to [Way2Way](https://modrinth.com/mod/way2wayfabric) for insights in
 
 This mod is included in [Tinkerer's Quilt](https://modrinth.com/modpack/tinkerers-quilt) - our modpack about rediscovering vanilla.
 
-We're open to suggestions for how to implement stuff better - if you see something wonky and have an idea - let us know.
+We're open to better ways to implement our mods. If you see something odd and have an idea, let us know!

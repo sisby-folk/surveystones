@@ -1,33 +1,35 @@
 {
-  "schemaVersion": 1,
-  "id": "surveystones",
-  "version": "${version}",
-  "name": "Surveystones",
-  "description": "Adds surveyor landmarks for discovered waystones",
-  "authors": [
-    "Sisby folk"
-  ],
-  "contact": {
-    "homepage": "https://modrinth.com/mod/surveystones",
-    "issues": "https://github.com/sisby-folk/surveystones/issues",
-    "sources": "https://github.com/sisby-folk/surveystones"
-  },
-  "icon": "assets/surveystones/icon.png",
-  "license": "LGPL-3.0-only",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "folk.sisby.surveystones.Surveystones"
-    ]
-  },
-  "depends": {
-    "minecraft": ">=${mc}",
-    "fabricloader": ">=${fl}",
-    "fabric-api": ">=${fapi}",
-    "surveyor": ">=${surveyor}"
-  },
-  "suggests": {
-    "fwaystones": ">=${fwaystones}",
-    "waystones": ">=${blaystones}"
-  }
+	"schemaVersion": 1,
+	"id": "${modId}",
+	"version": "${version}",
+	"name": "${modName}",
+	"description": "${modDescription}",
+	"authors": [
+		"${authors}"
+	],
+	"contributors": [
+		"${contributors}"
+	],
+	"contact": {
+		"homepage": "${homepage}",
+		"issues": "${issues}",
+		"sources": "${sources}"
+	},
+	"license": "${license}",
+	"icon": "assets/${modId}/icon.png",
+	"depends": {
+		"minecraft": ">=${mc}",
+		"fabricloader": ">=${fl}",
+		"fabric-api": ">=${fapi}",
+		"surveyor": ">=${surveyor}"
+	},
+	"suggests": {
+		"fwaystones": ">=${fwaystones}",
+		"waystones": ">=${blaystones}"
+	},
+	"entrypoints": {
+		"main": [
+			"folk.sisby.surveystones.Surveystones"
+		]
+	}
 }
