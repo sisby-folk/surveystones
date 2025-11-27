@@ -14,7 +14,7 @@ public class MixinPlayerWaystoneManager {
 	@Inject(method = "removeKnownWaystone", at = @At("HEAD"), remap = false)
 	private static void removeWaystoneEvent(MinecraftServer server, IWaystone waystone, CallbackInfo ci) {
 		if (server != null) {
-			BlaystoneEvents.removeWaystone(server.getWorld(waystone.getDimension()), waystone.getPos(), waystone.getName());
+			BlaystoneEvents.removeWaystone(server.getWorld(waystone.getDimension()), waystone);
 		}
 	}
 }

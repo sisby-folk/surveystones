@@ -13,6 +13,6 @@ public class Surveystones implements ModInitializer {
 	public void onInitialize() {
 		if (FabricLoader.getInstance().isModLoaded("fwaystones")) FwaystoneEvents.init();
 		if (FabricLoader.getInstance().isModLoaded("waystones")) BlaystoneEvents.init();
-		LOGGER.info("[Surveystones] Initialized.");
+		LOGGER.info("[Surveystones] Oh, there's one... and another... aaand another. Lots of stones around here, eh?");
 	}
 }
