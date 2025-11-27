@@ -13,6 +13,7 @@ archivesBaseName = project.slug
 repositories {
 	maven { url "https://repo.sleeping.town/" }
 	maven { url "https://api.modrinth.com/maven" }
+	mavenLocal()
 }
 
 dependencies {
