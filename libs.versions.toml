@@ -9,7 +9,7 @@ fl = "0.16.14"
 yarn = "1.20.1+build.10"
 fapi = "0.92.2+1.20.1"
 
-surveyor = "1.0.0-alpha.14+1.20"
+surveyor = "1.0.0+1.20"
 blaystones = "14.1.17+fabric-1.20.1"
 balm = "7.3.37+fabric-1.20.1"
 fwaystones = "3.3.3+mc1.20.1"
