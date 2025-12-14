@@ -124,4 +124,5 @@ tasks.register("fullRelease") {
 	group "publishing"
 	dependsOn "githubRelease"
 	dependsOn "modrinth"
+	dependsOn "curseforge"
 }
