@@ -1,6 +1,5 @@
 package folk.sisby.surveystones;
 
-import folk.sisby.surveyor.WorldSummary;
 import folk.sisby.surveyor.landmark.Landmark;
 import folk.sisby.surveyor.landmark.WorldLandmarks;
 import folk.sisby.surveyor.landmark.component.LandmarkComponentTypes;
@@ -46,18 +45,18 @@ public class BlaystoneEvents {
 	}
 
 	public static void updateWaystone(World world, IWaystone waystone) {
-		WorldLandmarks landmarks = WorldSummary.of(world).landmarks();
+		WorldLandmarks landmarks = WorldLandmarks.of(world);
 		if (landmarks == null) return;
-		landmarks.put(world, Landmark.create(WorldLandmarks.GLOBAL, getId(world, waystone), b -> LandmarkComponentTypes.forBlock(b, world, waystone.getPos())
+		landmarks.put(Landmark.create(WorldLandmarks.GLOBAL, getId(world, waystone), b -> LandmarkComponentTypes.forBlock(b, world, waystone.getPos())
 			.add(LandmarkComponentTypes.NAME, Text.of(waystone.getName()))
 			.add(LandmarkComponentTypes.LORE, List.of(world.getBlockState(waystone.getPos()).getBlock().getPickStack(world, waystone.getPos(), world.getBlockState(waystone.getPos())).getItem().getName().copy().setStyle(Style.EMPTY.withItalic(true).withColor(Formatting.GRAY))))
 		));
 	}
 
 	public static void removeWaystone(World world, IWaystone waystone) {
-		WorldLandmarks landmarks = WorldSummary.of(world).landmarks();
+		WorldLandmarks landmarks = WorldLandmarks.of(world);
 		if (landmarks == null) return;
-		landmarks.remove(world, WorldLandmarks.GLOBAL, getId(world, waystone));
+		landmarks.remove(WorldLandmarks.GLOBAL, getId(world, waystone));
 	}
 
 	public static void activateWaystone(WaystoneActivatedEvent event) {

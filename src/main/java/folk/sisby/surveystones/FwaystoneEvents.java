@@ -1,6 +1,5 @@
 package folk.sisby.surveystones;
 
-import folk.sisby.surveyor.WorldSummary;
 import folk.sisby.surveyor.landmark.Landmark;
 import folk.sisby.surveyor.landmark.WorldLandmarks;
 import folk.sisby.surveyor.landmark.component.LandmarkComponentTypes;
@@ -41,9 +40,9 @@ public class FwaystoneEvents {
 		if (waystone != null) {
 			WaystoneBlockEntity waystoneEntity = waystone.getEntity();
 			if (waystoneEntity != null && waystoneEntity.getWorld() instanceof ServerWorld world) {
-				WorldLandmarks landmarks = WorldSummary.of(world).landmarks();
+				WorldLandmarks landmarks = WorldLandmarks.of(world);
 				if (landmarks == null) return;
-				landmarks.put(world, Landmark.create(WorldLandmarks.GLOBAL, getId(world, waystone), b -> LandmarkComponentTypes.forBlock(b, world, waystone.way_getPos())
+				landmarks.put(Landmark.create(WorldLandmarks.GLOBAL, getId(world, waystone), b -> LandmarkComponentTypes.forBlock(b, world, waystone.way_getPos())
 					.add(LandmarkComponentTypes.COLOR, waystone.getColor())
 					.add(LandmarkComponentTypes.NAME, Text.of(waystone.getWaystoneName()))
 					.add(LandmarkComponentTypes.LORE, List.of(world.getBlockState(waystone.way_getPos()).getBlock().getPickStack(world, waystone.way_getPos(), world.getBlockState(waystone.way_getPos())).getItem().getName().copy().setStyle(Style.EMPTY.withItalic(true).withColor(Formatting.GRAY))))
@@ -58,9 +57,9 @@ public class FwaystoneEvents {
 			WaystoneBlockEntity waystoneEntity = waystone.getEntity();
 			if (waystoneEntity != null) {
 				if (waystoneEntity.getWorld() instanceof ServerWorld sw) {
-					WorldLandmarks landmarks = WorldSummary.of(sw).landmarks();
+					WorldLandmarks landmarks = WorldLandmarks.of(sw);
 					if (landmarks == null) return;
-					landmarks.remove(sw, WorldLandmarks.GLOBAL, getId(sw, waystone));
+					landmarks.remove(WorldLandmarks.GLOBAL, getId(sw, waystone));
 				}
 			}
 		}
