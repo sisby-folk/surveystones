@@ -56,7 +56,7 @@ public class BlaystoneEvents {
 	public static void removeWaystone(World world, IWaystone waystone) {
 		WorldLandmarks landmarks = WorldLandmarks.of(world);
 		if (landmarks == null) return;
-		landmarks.remove(WorldLandmarks.GLOBAL, getId(world, waystone));
+		landmarks.removeAll(l -> l.id().toString().startsWith("waystones:" + waystone.getWaystoneType().getPath()) && l.contains(LandmarkComponentTypes.POS) && l.get(LandmarkComponentTypes.POS).equals(waystone.getPos()) || l.get(LandmarkComponentTypes.POS).equals(waystone.getPos().down()));
 	}
 
 	public static void activateWaystone(WaystoneActivatedEvent event) {
